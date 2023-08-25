@@ -1,5 +1,5 @@
 version: "3"
-name: CodeIgniter4_first_project
+name: CodeIgniter4_docker_template
 services:
     src:
         build: .

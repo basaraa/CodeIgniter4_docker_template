@@ -23,6 +23,4 @@ RUN apt-get update
 RUN docker-php-ext-install intl
 RUN docker-php-ext-configure intl
 RUN service apache2 restart
-
-WORKDIR /var/www/html/codeigniter4
 USER root
