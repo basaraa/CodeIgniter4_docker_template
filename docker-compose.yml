@@ -4,14 +4,6 @@ services:
     src:
         build: .
         environment:
-          - REGEN_ENV_FILE=1
-          - CI_ENVIRONMENT=development
-          - DB_DEFAULT_HOSTNAME=localhost
-          - DB_DEFAULT_DATABASE=myDatabase
-          - DB_DEFAULT_USERNAME=root
-          - DB_DEFAULT_PASSWORD=admin
-          - DB_DEFAULT_DRIVER=MySQLi
-          - DB_DEFAULT_PORT=3306
         ports:
           - 8000:80
         links:
@@ -26,7 +18,7 @@ services:
           MYSQL_ROOT_PASSWORD: admin
           MYSQL_DATABASE: myDatabase
         volumes:
-            - ./src/database/:/docker-entrypoint-initdb.d
+            - ./src/app/Database/:/docker-entrypoint-initdb.d
             - persistent:/var/lib/mysql
         command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
     phpmyadmin:
